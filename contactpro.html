@@ -73,7 +73,7 @@
             };
         </script>
         <style>
-            body { background-color: #131315; color: #e5e1e4; font-family: 'Inter', sans-serif; }
+            body { background-color: #131315; color: #e5e1e4; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
             .glass { background: rgba(53, 52, 55, 0.6); backdrop-filter: blur(20px); }
             .neon-glow { text-shadow: 0 0 15px rgba(0, 247, 25, 0.4); }
             .neon-border-hover:hover { border-top: 2px solid #00f719; }
@@ -106,6 +106,7 @@
         </style>
     </head>
     <body class="selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+        
         <nav class="fixed top-0 w-full z-50 bg-[#131315]/60 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 h-20 max-w-full shadow-[0_0_48px_rgba(0,247,25,0.05)]">
             <div class="text-xl font-bold tracking-tighter text-[#00F719] uppercase font-headline">ContactC-SQL</div>
             <div class="hidden md:flex items-center gap-8">
@@ -117,7 +118,7 @@
             <div class="flex items-center gap-4">
                 <button class="material-symbols-outlined text-[#00F719] transition-transform duration-200 active:scale-95">terminal</button>
                 <a href="./index.html">
-                    <button class="bg-primary-container text-on-primary-container px-6 py-2 font-headline font-bold text-xs uppercase tracking-widest hover:shadow-[0_0_15px_rgba(0,247,25,0.5)] transition-all">Révenir à l'acceil</button>
+                    <button class="bg-primary-container text-on-primary-container px-6 py-2 font-headline font-bold text-xs uppercase tracking-widest hover:shadow-[0_0_15px_rgba(0,247,25,0.5)] transition-all">Révenir à l'accueil</button>
                 </a>
             </div>
         </nav>
@@ -144,7 +145,7 @@
                 </div>
                 <div class="lg:col-span-5 relative">
                     <div class="relative z-10 rounded-xl overflow-hidden border border-outline-variant/20 shadow-2xl shadow-primary-container/5">
-                        <img class="w-full h-[500px] object-cover opacity-80" data-alt="code C sur terminal sombre avec coloration syntaxique verte" src="./img/projet.jpeg" />
+                        <img class="w-full h-[500px] object-cover opacity-80" alt="code C sur terminal" src="./img/projet.jpeg" />
                         <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6 p-6 glass rounded-lg border border-white/5">
                             <p class="font-mono text-xs text-[#00F719] mb-2 uppercase tracking-widest">Console Log</p>
@@ -170,7 +171,7 @@
                     </div>
                     <div class="md:w-2/3">
                         <p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
-                            Contrairement aux fichiers texte classiques, notre architecture utilise des structures C pour le traitement en mémoire vive et **SQLite** pour le stockage permanent. En exploitant la directive `PRIMARY KEY` et l'indexation SQL, ce système garantit une recherche quasi-instantanée même sur de larges volumes de contacts, tout en évitant les fuites mémoire grâce à une gestion rigoureuse des pointeurs.
+                            Contrairement aux fichiers texte classiques, notre architecture utilise des structures C pour le traitement en mémoire vive et **SQLite** pour le stockage permanent. En exploitant la directive `PRIMARY KEY` et l'indexation SQL, ce système garantit une recherche quasi-instantanée même sur de larges volumes de contacts.
                         </p>
                         <div class="grid grid-cols-2 gap-8">
                             <div class="space-y-2">
@@ -190,45 +191,27 @@
         <section class="py-32 px-6 md:px-12" id="features">
             <div class="max-w-7xl mx-auto">
                 <div class="mb-20 space-y-4">
-                        <h2 class="font-headline text-5xl font-bold tracking-tight">Capacités du <span class="text-primary-container">Système</span></h2>
+                    <h2 class="font-headline text-5xl font-bold tracking-tight">Capacités du <span class="text-primary-container">Système</span></h2>
                     <div class="h-1 w-24 bg-primary-container"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="group bg-surface-container-low p-8 rounded-lg neon-border-hover transition-all duration-300">
+                    <div class="group bg-surface-container-low p-8 rounded-lg neon-border-hover transition-all duration-300 border border-outline-variant/10">
                         <span class="material-symbols-outlined text-4xl text-[#00F719] mb-6">person_add</span>
                         <h4 class="font-headline text-xl font-bold mb-3">Ajout de Contact</h4>
                         <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Saisie sécurisée via struct Contact avec validation des formats de noms et numéros.</p>
                         <span class="font-mono text-[10px] text-gray-600 uppercase tracking-widest">C: malloc() + SQL INSERT</span>
                     </div>
-                    <div class="group bg-surface-container-low p-8 rounded-lg neon-border-hover transition-all duration-300">
+                    <div class="group bg-surface-container-low p-8 rounded-lg neon-border-hover transition-all duration-300 border border-outline-variant/10">
                         <span class="material-symbols-outlined text-4xl text-[#00F719] mb-6">person_remove</span>
                         <h4 class="font-headline text-xl font-bold mb-3">Suppression Ciblée</h4>
                         <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Retrait définitif de records via leur ID unique, avec mise à jour immédiate de la base.</p>
                         <span class="font-mono text-[10px] text-gray-600 uppercase tracking-widest">SQL: DELETE WHERE id = ?</span>
                     </div>
-                    <div class="group bg-surface-container-low p-8 rounded-lg neon-border-hover transition-all duration-300">
+                    <div class="group bg-surface-container-low p-8 rounded-lg neon-border-hover transition-all duration-300 border border-outline-variant/10">
                         <span class="material-symbols-outlined text-4xl text-[#00F719] mb-6">edit_note</span>
                         <h4 class="font-headline text-xl font-bold mb-3">Mise à jour Dynamique</h4>
                         <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Modification en temps réel des métadonnées grâce aux requêtes SQL UPDATE préparées.</p>
                         <span class="font-mono text-[10px] text-gray-600 uppercase tracking-widest">C: sqlite3_bind_text()</span>
-                    </div>
-                    <div class="group bg-surface-container-low p-8 rounded-lg neon-border-hover transition-all duration-300">
-                        <span class="material-symbols-outlined text-4xl text-[#00F719] mb-6">manage_search</span>
-                        <h4 class="font-headline text-xl font-bold mb-3">Recherche Puissante</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Recherche textuelle par motif (pattern matching) optimisée par des index SQL.</p>
-                        <span class="font-mono text-[10px] text-gray-600 uppercase tracking-widest">SQL: LIKE '%query%'</span>
-                    </div>
-                    <div class="group bg-surface-container-low p-8 rounded-lg neon-border-hover transition-all duration-300">
-                        <span class="material-symbols-outlined text-4xl text-[#00F719] mb-6">format_list_bulleted</span>
-                        <h4 class="font-headline text-xl font-bold mb-3">Affichage Tabulaire</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Sortie terminal formatée proprement, listant l'intégralité du répertoire relationnel.</p>
-                        <span class="font-mono text-[10px] text-gray-600 uppercase tracking-widest">C: printf formatting logic</span>
-                    </div>
-                    <div class="group bg-surface-container-low p-8 rounded-lg neon-border-hover transition-all duration-300">
-                        <span class="material-symbols-outlined text-4xl text-[#00F719] mb-6">database</span>
-                        <h4 class="font-headline text-xl font-bold mb-3">Persistance Réelle</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Les données survivent à la fermeture du programme grâce au moteur SQLite3.</p>
-                        <span class="font-mono text-[10px] text-gray-600 uppercase tracking-widest">CORE: RELATIONAL DB</span>
                     </div>
                 </div>
             </div>
@@ -238,7 +221,6 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex items-center gap-4 mb-12">
                     <span class="material-symbols-outlined text-[#00F719]">code_blocks</span>
-                    <a id="technique" href=""></a>
                     <h2 class="font-headline text-3xl font-bold uppercase tracking-widest">Implémentation Technique</h2>
                 </div>
                 <div class="rounded-xl overflow-hidden border border-outline-variant/20 bg-surface-dim shadow-2xl">
@@ -253,45 +235,18 @@
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-outline-variant/10">
                         <div class="p-8 space-y-4">
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="font-mono text-xs text-gray-400">main.c</span>
-                                <span class="text-[10px] px-2 py-0.5 rounded border border-primary-container/20 text-primary-container uppercase">Logiciel C</span>
-                            </div>
                             <pre class="font-mono text-sm leading-relaxed text-gray-300 custom-scrollbar overflow-x-auto"><span class="text-secondary">typedef struct</span> {
     <span class="text-secondary">int</span> id;
     <span class="text-secondary">char</span> nom[50];
     <span class="text-secondary">char</span> tel[20];
-} <span class="text-primary-container">Contact</span>;
-
-<span class="text-secondary">void</span> <span class="text-primary-container">ajouter</span>(sqlite3 *db, Contact c) {
-    <span class="text-secondary">char</span> *sql = <span class="text-on-tertiary-container">"INSERT INTO contacts (nom, tel) VALUES (?, ?);"</span>;
-    sqlite3_stmt *stmt;
-    
-    sqlite3_prepare_v2(db, sql, -1, &stmt, 0);
-    sqlite3_bind_text(stmt, 1, c.nom, -1, SQLITE_STATIC);
-    sqlite3_bind_text(stmt, 2, c.tel, -1, SQLITE_STATIC);
-    
-    <span class="text-secondary">if</span> (sqlite3_step(stmt) == SQLITE_DONE) {
-        printf(<span class="text-on-tertiary-container">"Contact enregistré!\n"</span>);
-    }
-    sqlite3_finalize(stmt);
-}</pre>
+} <span class="text-primary-container">Contact</span>;</pre>
                         </div>
                         <div class="p-8 space-y-4 bg-[#0a0a0c]">
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="font-mono text-xs text-gray-400">schema.sql</span>
-                                <span class="text-[10px] px-2 py-0.5 rounded border border-secondary/20 text-secondary uppercase">Moteur SQL</span>
-                            </div>
                             <pre class="font-mono text-sm leading-relaxed text-gray-300 custom-scrollbar overflow-x-auto"><span class="text-secondary">CREATE TABLE</span> <span class="text-primary-container">contacts</span> (
     id <span class="text-secondary">INTEGER PRIMARY KEY</span> AUTOINCREMENT,
     nom <span class="text-secondary">TEXT NOT NULL</span>,
-    tel <span class="text-secondary">TEXT UNIQUE NOT NULL</span>,
-    email <span class="text-secondary">TEXT</span>,
-    created_at <span class="text-secondary">DATETIME DEFAULT</span> CURRENT_TIMESTAMP
-);
-
-<span class="text-gray-500">-- Indexation pour accélérer la recherche</span>
-<span class="text-secondary">CREATE INDEX</span> idx_nom <span class="text-secondary">ON</span> contacts(nom);</pre>
+    tel <span class="text-secondary">TEXT UNIQUE NOT NULL</span>
+);</pre>
                         </div>
                     </div>
                 </div>
@@ -300,9 +255,7 @@
 
         <section class="py-32 px-6 md:px-12" id="database">
             <div class="max-w-7xl mx-auto">
-                <a id="sql" href="">
-                    <h2 class="font-headline text-3xl font-bold mb-16 text-center uppercase tracking-[0.2em]">Architecture du <span class="text-primary-container">Schéma</span></h2>
-                </a>
+                <h2 class="font-headline text-3xl font-bold mb-16 text-center uppercase tracking-[0.2em]">Architecture du <span class="text-primary-container">Schéma</span></h2>
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 items-stretch">
                     <div class="bg-surface-container p-6 border-l-4 border-[#00F719]">
                         <p class="font-mono text-[10px] text-[#00F719] mb-1">DATA_TYPE_01</p>
@@ -325,122 +278,56 @@
                         <p class="text-xs text-on-surface-variant font-mono">DATETIME (Auto)</p>
                     </div>
                 </div>
-                <div class="mt-12 bg-surface-container-low p-1 rounded-lg border border-outline-variant/10">
-                    <table class="w-full font-mono text-sm text-left">
-                        <thead class="bg-surface-container-high text-primary-container uppercase text-[10px] tracking-widest">
-                            <tr>
-                                <th class="px-6 py-4">ID_RECORD</th>
-                                <th class="px-6 py-4">NOM_CONTACT</th>
-                                <th class="px-6 py-4">TÉL_MOBILE</th>
-                                <th class="px-6 py-4">ADRESSE_MAIL</th>
-                                <th class="px-6 py-4">ETAT_SYNC</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-outline-variant/5">
-                            <tr class="hover:bg-primary-container/5 transition-colors">
-                                <td class="px-6 py-4 text-gray-400">01</td>
-                                <td class="px-6 py-4 font-bold">Lamine_Diallo</td>
-                                <td class="px-6 py-4 text-gray-400">+221 77 000 00 00</td>
-                                <td class="px-6 py-4 text-gray-400">l.diallo@dev.sn</td>
-                                <td class="px-6 py-4"><span class="w-2 h-2 rounded-full bg-primary-container inline-block mr-2"></span> STORED</td>
-                            </tr>
-                            <tr class="hover:bg-primary-container/5 transition-colors">
-                                <td class="px-6 py-4 text-gray-400">02</td>
-                                <td class="px-6 py-4 font-bold">Sarah_Diop</td>
-                                <td class="px-6 py-4 text-gray-400">+221 70 111 22 33</td>
-                                <td class="px-6 py-4 text-gray-400">sarah.diop@tech.com</td>
-                                <td class="px-6 py-4"><span class="w-2 h-2 rounded-full bg-primary-container inline-block mr-2"></span> STORED</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
         </section>
 
-        <section class="py-32 px-6 md:px-12 bg-surface-container-lowest">
-            <div class="max-w-7xl mx-auto">
-                <h2 class="font-headline text-3xl font-bold mb-16 text-center">Visualisation du <span class="italic text-outline">Terminal</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div class="overflow-hidden group relative rounded-lg bg-surface-container">
-                        <img class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110 opacity-70" data-alt="Interface ligne de commande terminal" src="./img/menu.jpeg" />
-                        <div class="absolute inset-0 bg-primary-container/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="font-mono text-xs font-bold uppercase tracking-widest text-background bg-primary-container px-4 py-2">Menu Principal</span>
-                        </div>
-                    </div>
-                    <div class="overflow-hidden group relative rounded-lg bg-surface-container">
-                        <img class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110 opacity-70" data-alt="Flux de données numériques SQL" src="./img/sql.jpeg" />
-                        <div class="absolute inset-0 bg-primary-container/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="font-mono text-xs font-bold uppercase tracking-widest text-background bg-primary-container px-4 py-2">Execution SQL</span>
-                        </div>
-                    </div>
-                    <div class="overflow-hidden group relative rounded-lg bg-surface-container">
-                        <img class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110 opacity-70" data-alt="Circuits technologiques sombres" src="./img/base.jpeg" />
-                        <div class="absolute inset-0 bg-primary-container/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="font-mono text-xs font-bold uppercase tracking-widest text-background bg-primary-container px-4 py-2">Gestion Mémoire</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-32 px-6 md:px-12">
-            <div class="max-w-5xl mx-auto">
-                <div class="relative rounded-xl overflow-hidden glass border border-outline-variant/30 p-1 bg-surface-container-high group">
-                    <div class="aspect-video bg-background flex flex-col items-center justify-center relative overflow-hidden">
-                        <img class="absolute inset-0 object-cover opacity-30 group-hover:scale-105 transition-transform duration-1000" data-alt="Données SQL en cascade" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxFG6L12hYD7NTBFCHq1-CdCmmz3RnRjJ1Q8MnHH_AAIyRoBkdrGVUyha13_cvxKREDEj0rh1CTdfk_5a_jezmG1RgJhzXIYF9Tsk4y9qt_-99gUjVD_91sxcQKuCr-gfYXLBKiZqcf2aW0fD6Z0BJFC-vX33FlNofFI-tGTDAsf4zZLmCTb0ooLxN5SBXiejMoGJBJPKKcGXhc7f0kSTPQP0RGon7KGhgwfFTxqj5bmFYBDA_5Ua5_9lhJONLNjW2XeeL3rFO" />
-                        <div class="z-10 text-center space-y-6">
-                            <div class="w-20 h-20 rounded-full border-2 border-primary-container flex items-center justify-center mx-auto bg-primary-container/10">
-                                <span class="material-symbols-outlined text-4xl text-primary-container">play_arrow</span>
-                            </div>
-                            <h4 class="font-headline text-2xl font-bold">Démonstration Runtime</h4>
-                            <button class="bg-primary-container text-on-primary-container px-10 py-4 font-headline font-bold text-sm uppercase tracking-widest hover:shadow-[0_0_30px_rgba(0,247,25,0.7)] transition-all">Lancer l'aperçu</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-32 px-6 md:px-12 bg-surface-container-low">
+        <section class="py-32 px-6 md:px-12 bg-surface-container-low" id="evolutions">
             <div class="max-w-7xl mx-auto">
                 <h2 class="font-headline text-4xl font-bold mb-20 text-center">Évolutions du <span class="text-primary-container">Projet</span></h2>
                 <div class="relative">
                     <div class="absolute left-1/2 -translate-x-1/2 w-px h-full bg-outline-variant/30 hidden md:block"></div>
+                    
                     <div class="space-y-24">
                         <div class="relative flex flex-col md:flex-row items-center gap-8 group">
                             <div class="md:w-1/2 md:text-right">
                                 <h4 class="font-headline text-2xl font-bold text-[#00F719]">Interface GTK</h4>
-                                <p class="text-on-surface-variant mt-2">Passage d'une interface terminal à une interface graphique fenêtrée tout en gardant le cœur en C.</p>
+                                <p class="text-on-surface-variant mt-2 max-w-md ml-auto">Passage d'une interface terminal à une interface graphique fenêtrée tout en gardant le cœur en C.</p>
                             </div>
-                            <div class="w-12 h-12 rounded-full glass border border-primary-container z-10 flex items-center justify-center shrink-0 bg-surface">
-                                <div class="w-3 h-3 rounded-full bg-primary-container"></div>
+                            <div class="w-12 h-12 rounded-full glass border border-primary-container z-10 flex items-center justify-center shrink-0 bg-surface shadow-[0_0_15px_rgba(0,247,25,0.2)]">
+                                <div class="w-3 h-3 rounded-full bg-primary-container animate-pulse"></div>
                             </div>
-                            <div class="md:w-1/2 font-mono text-xs text-gray-500 uppercase tracking-widest">PHASE 02</div>
+                            <div class="md:w-1/2 font-mono text-xs text-gray-500 uppercase tracking-[0.3em]">PHASE_01</div>
                         </div>
+
                         <div class="relative flex flex-col md:flex-row-reverse items-center gap-8 group">
                             <div class="md:w-1/2 text-left">
                                 <h4 class="font-headline text-2xl font-bold text-[#00F719]">Export JSON/CSV</h4>
-                                <p class="text-on-surface-variant mt-2">Ajout d'un module de portabilité pour exporter la base SQL vers des formats universels.</p>
+                                <p class="text-on-surface-variant mt-2 max-w-md">Ajout d'un module de portabilité pour exporter la base SQL vers des formats universels.</p>
                             </div>
-                            <div class="w-12 h-12 rounded-full glass border border-outline-variant z-10 flex items-center justify-center shrink-0 bg-surface">
-                                <div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+                            <div class="w-12 h-12 rounded-full glass border border-primary-container z-10 flex items-center justify-center shrink-0 bg-surface shadow-[0_0_15px_rgba(0,247,25,0.2)]">
+                                <div class="w-3 h-3 rounded-full bg-primary-container"></div>
                             </div>
-                            <div class="md:w-1/2 md:text-right font-mono text-xs text-gray-500 uppercase tracking-widest">PHASE 03</div>
+                            <div class="md:w-1/2 md:text-right font-mono text-xs text-gray-500 uppercase tracking-[0.3em]">PHASE_02</div>
+                        </div>
+
+                        <div class="relative flex flex-col md:flex-row items-center gap-8 group">
+                            <div class="md:w-1/2 md:text-right">
+                                <h4 class="font-headline text-2xl font-bold text-[#00F719]">Sync Cloud</h4>
+                                <p class="text-on-surface-variant mt-2 max-w-md ml-auto">Implémentation d'une API REST pour synchroniser les contacts locaux avec un serveur distant.</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full glass border border-primary-container z-10 flex items-center justify-center shrink-0 bg-surface shadow-[0_0_15px_rgba(0,247,25,0.2)]">
+                                <div class="w-3 h-3 rounded-full bg-primary-container"></div>
+                            </div>
+                            <div class="md:w-1/2 font-mono text-xs text-gray-500 uppercase tracking-[0.3em]">PHASE_03</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <footer class="bg-[#131315] w-full border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-16">
-            <div class="flex flex-col gap-2 mb-8 md:mb-0">
-                <div class="text-[#00F719] font-black font-headline text-2xl uppercase">ContactC-SQL</div>
-                <p class="font-mono text-[10px] text-gray-600 tracking-widest uppercase">© 2024 Portfolio de Développement. Technologies C & SQLite.</p>
-            </div>
-            <div class="flex flex-wrap gap-8 justify-center">
-                <a class="font-['Space_Grotesk'] text-xs uppercase text-[#c8c6c5] hover:text-white transition-all underline-offset-4 hover:underline" href="https://www.linkedin.com/in/abdoulaye-sow-58b98b35a">LinkedIn</a>
-                <a class="font-['Space_Grotesk'] text-xs uppercase text-[#c8c6c5] hover:text-white transition-all underline-offset-4 hover:underline" href="https://t.me/Abdallahso">Télégramme</a>
-                <a class="font-['Space_Grotesk'] text-xs uppercase text-[#c8c6c5] hover:text-white transition-all underline-offset-4 hover:underline" href="https://github.com/dashboard">Github</a>
-            </div>
+        <footer class="py-12 border-t border-outline-variant/10 text-center">
+            <p class="font-mono text-[10px] text-gray-600 uppercase tracking-widest">© 2026 ContactC-SQL // Logiciel Libres</p>
         </footer>
+
     </body>
 </html>
