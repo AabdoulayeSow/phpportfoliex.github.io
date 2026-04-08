@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="dark" lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#303030",
+              "outline": "#84967d",
+              "secondary-fixed-dim": "#c8c6c5",
+              "inverse-primary": "#006e04",
+              "primary-fixed-dim": "#00e616",
+              "on-secondary": "#303030",
+              "outline-variant": "#3b4b36",
+              "on-secondary-fixed-variant": "#474746",
+              "surface-container-lowest": "#0e0e0e",
+              "tertiary-fixed": "#e2e2e2",
+              "surface-container": "#1f1f1f",
+              "on-error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#005302",
+              "error": "#ffb4ab",
+              "primary": "#ceffbe",
+              "on-secondary-container": "#b7b5b4",
+              "secondary-container": "#474746",
+              "on-background": "#e2e2e2",
+              "on-tertiary-fixed-variant": "#454747",
+              "on-surface-variant": "#baccb0",
+              "on-secondary-fixed": "#1b1c1c",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "on-tertiary-container": "#5a5c5c",
+              "tertiary-container": "#d5d5d5",
+              "surface-tint": "#00e616",
+              "surface-variant": "#353535",
+              "on-primary-container": "#006c04",
+              "surface": "#131313",
+              "surface-container-highest": "#353535",
+              "surface-container-high": "#2a2a2a",
+              "on-surface": "#e2e2e2",
+              "inverse-surface": "#e2e2e2",
+              "background": "#131313",
+              "primary-container": "#00f719",
+              "on-tertiary": "#2f3131",
+              "surface-container-low": "#1b1b1b",
+              "on-error": "#690005",
+              "surface-bright": "#393939",
+              "tertiary": "#f1f1f1",
+              "error-container": "#93000a",
+              "on-primary": "#003a01",
+              "surface-dim": "#131313",
+              "on-tertiary-fixed": "#1a1c1c",
+              "secondary": "#c8c6c5",
+              "secondary-fixed": "#e4e2e1",
+              "on-primary-fixed": "#002200",
+              "primary-fixed": "#76ff64"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.125rem",
+              "lg": "0.25rem",
+              "xl": "0.5rem",
+              "full": "0.75rem"
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .text-glow {
+        text-shadow: 0 0 15px rgba(0, 247, 25, 0.4);
+      }
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+
+  <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+    <header class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl">
+      <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        <div class="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform">
+          <span class="material-symbols-outlined text-[#00F719]" data-icon="terminal">terminal</span>
+          <span class="text-xl font-bold tracking-tighter text-[#00F719] font-['Space_Grotesk']">KINETIC_LOGIC</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tight">
+          <a class="text-[#c8c6c5] hover:text-[#00F719] transition-colors duration-300" href="./home.html">Home</a>
+          <a class="text-[#00F719] border-b-2 border-[#00F719] pb-1" href="./project.html">Projects</a>
+          <a class="text-[#c8c6c5] hover:text-[#00F719] transition-colors duration-300" href="./contact.html">Contact</a>
+        </nav>
+        <div class="md:hidden">
+          <span class="material-symbols-outlined text-[#00F719]" data-icon="menu">menu</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+      <section class="mb-20">
+        <div class="flex flex-col gap-6 max-w-2xl">
+          <span class="font-headline text-primary-container text-xs tracking-[0.2em] uppercase">REPOSITORY_ARCHIVE</span>
+          <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface leading-none">
+            SYSTEMES <br />
+            <span class="text-primary-container">APPLICATIONS.</span>
+          </h1>
+          <div class="relative mt-8 group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary-container/20 to-transparent blur-lg opacity-50 group-focus-within:opacity-100 transition-opacity"></div>
+            <div class="relative flex items-center bg-surface-container border-b border-outline-variant/30 focus-within:border-primary-container transition-colors">
+              <span class="material-symbols-outlined ml-4 text-on-surface-variant" data-icon="search">search</span>
+              <input class="w-full bg-transparent border-none focus:ring-0 py-4 px-4 font-headline text-sm uppercase tracking-widest text-on-surface placeholder:text-on-surface-variant/40" placeholder="QUERY_BY_TECH_STACK...(ex:PHP,ESP32,..)" type="text" />
+              <button class="mr-4 font-headline text-[10px] text-primary-container border border-primary-container/20 px-3 py-1 hover:bg-primary-container hover:text-on-primary transition-colors">
+                EXECUTE
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-x-16 md:gap-y-24">
+        <article class="group relative flex flex-col gap-6">
+          <div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low">
+            <img alt="Cybersecurity interface" class="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" src="./img/Esp32.jpeg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+            <div class="absolute top-4 right-4 bg-primary-container text-on-primary font-headline text-[10px] font-bold px-2 py-1 tracking-tighter">
+              ACTIVE_DEPLOYMENT
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-4">
+              <span class="font-headline text-primary-container text-[10px] font-bold tracking-widest">01_</span>
+              <h3 class="font-headline text-2xl font-bold tracking-tight text-on-surface group-hover:text-primary-container transition-colors">SMART_BIN_v1.0</h3>
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed max-w-[90%]">
+              Système de gestion intelligente des déchets basé sur l'IoT. Utilisation d'un microcontrôleur ESP32 pour la détection de niveau en temps réel, l'automatisation d'ouverture et la transmission de données via réseau sans fil.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <a href="./arduino.html#hero"><span class="font-['IBM_Plex_Mono'] text-[10px] text-on-surface-variant border border-outline-variant/30 px-2 py-1">Consulter le code</span></a>
+              <a href="./arduino.html#process"><span class="font-['IBM_Plex_Mono'] text-[10px] text-on-surface-variant border border-outline-variant/30 px-2 py-1">Shéma de conception</span></a>
+              <a href="./arduino.html#result"><span class="font-['IBM_Plex_Mono'] text-[10px] text-on-surface-variant border border-outline-variant/30 px-2 py-1">Voir le Démo</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="group relative flex flex-col gap-6 md:mt-12">
+          <div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low">
+            <img alt="Blockchain infrastructure" class="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" src="./img/LocaSénégal.jpeg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-4">
+              <span class="font-headline text-primary-container text-[10px] font-bold tracking-widest">02_</span>
+              <h3 class="font-headline text-2xl font-bold tracking-tight text-on-surface group-hover:text-primary-container transition-colors">LOCASÉNÉGAL_APP</h3>
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed max-w-[90%]">
+              Plateforme de mise en relation immobilière dédiée au marché sénégalais. Conception d'une interface intuitive pour la recherche de logements et gestion d'une base de données complexe pour les annonces et profils utilisateurs
+            </p>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <a href="./LocaSénégal.html#explorer"><span class="font-['IBM_Plex_Mono'] text-[10px] text-on-surface-variant border border-outline-variant/30 px-2 py-1">Explorez</span></a>
+              <a href="./LocaSénégal.html#inventaire"><span class="font-['IBM_Plex_Mono'] text-[10px] text-on-surface-variant border border-outline-variant/30 px-2 py-1">Invantaire</span></a>
+              <a href="./LocaSénégal.html#buness"><span class="font-['IBM_Plex_Mono'] text-[10px] text-on-surface-variant border border-outline-variant/30 px-2 py-1">busness modèle</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="group relative flex flex-col gap-6">
+          <div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low">
+            <img alt="AI processing chip" class="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" src="./img/Contact.jpeg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+            <div class="absolute top-4 right-4 bg-tertiary text-on-tertiary font-headline text-[10px] font-bold px-2 py-1 tracking-tighter">
+              ARCHIVED
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-4">
+              <span class="font-headline text-primary-container text-[10px] font-bold tracking-widest">03_</span>
+              <h3 class="font-headline text-2xl font-bold tracking-tight text-on-surface group-hover:text-primary-container transition-colors">CONTACT_MANAGER_PRO</h3>
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed max-w-[90%]">
+              Application de gestion de répertoire téléphonique optimisée. Implémentation de fonctionnalités de recherche avancée, de filtrage de doublons et de synchronisation locale pour une gestion fluide des contacts mobiles.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <a href="./contactpro.html#foctionalité"><span class="font-['IBM_Plex_Mono'] text-[10px] text-on-surface-variant border border-outline-variant/30 px-2 py-1">Fonctionnalités</span></a>
+              <a href="./contactpro.html#technique"><span class="font-['IBM_Plex_Mono'] text-[10px] text-on-surface-variant border border-outline-variant/30 px-2 py-1">Algorithme</span></a>
+              <a href="./contactpro.html#sql"><span class="font-['IBM_Plex_Mono'] text-[10px] text-on-surface-variant border border-outline-variant/30 px-2 py-1">Base SQL</span></a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="mt-40 grid grid-cols-1 md:grid-cols-2 gap-12 bg-surface-container p-8 md:p-16 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-32 h-32 bg-primary-container/5 blur-3xl rounded-full"></div>
+        <div class="relative z-10 flex flex-col gap-8">
+          <span class="font-headline text-primary-container text-[10px] tracking-[0.4em] uppercase">System Performance</span>
+          <h2 class="font-headline text-4xl font-bold tracking-tight text-on-surface">BUILT_FOR_STABILITY</h2>
+          <p class="text-on-surface-variant leading-relaxed font-body">
+            Mes processus de conception privilégient la fiabilité des systèmes et l'optimisation des performances. Chaque déploiement est pensé pour garantir une haute disponibilité et une maintenance simplifiée du code source.
+          </p>
+          <div class="flex gap-4">
+            <button class="bg-primary-container text-on-primary font-headline text-[10px] font-black px-6 py-3 tracking-widest rounded-sm hover:brightness-110 active:scale-95 transition-all">
+              VIEW_GITHUB_REPOSITORY
+            </button>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-surface-container-high p-6 border-l border-primary-container/20">
+            <span class="block font-headline text-3xl font-bold text-primary-container">99.9%</span>
+            <span class="block font-headline text-[10px] text-on-surface-variant uppercase tracking-widest mt-2">AVAILABILITY</span>
+          </div>
+          <div class="bg-surface-container-high p-6 border-l border-primary-container/20">
+            <span class="block font-headline text-3xl font-bold text-primary-container">20ms</span>
+            <span class="block font-headline text-[10px] text-on-surface-variant uppercase tracking-widest mt-2">LATENCY</span>
+          </div>
+          <div class="bg-surface-container-high p-6 border-l border-primary-container/20">
+            <span class="block font-headline text-3xl font-bold text-primary-container">50+</span>
+            <span class="block font-headline text-[10px] text-on-surface-variant uppercase tracking-widest mt-2">PEPOS</span>
+          </div>
+          <div class="bg-surface-container-high p-6 border-l border-primary-container/20">
+            <span class="block font-headline text-3xl font-bold text-primary-container">100%</span>
+            <span class="block font-headline text-[10px] text-on-surface-variant uppercase tracking-widest mt-2">SECURE</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-4 md:hidden bg-[#131313]/80 backdrop-blur-2xl z-50 rounded-t-sm shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+      <a class="flex flex-col items-center justify-center text-[#c8c6c5] transition-transform active:scale-90 tap-highlight-none" href="index.html">
+        <span class="material-symbols-outlined" data-icon="home">home</span>
+        <span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">Home</span>
+      </a>
+      <a class="flex flex-col items-center justify-center text-[#00F719] font-bold bg-[#00F719]/10 rounded-sm px-4 py-1 transition-transform active:scale-90 tap-highlight-none" href="projects.html">
+        <span class="material-symbols-outlined" data-icon="reorder">reorder</span>
+        <span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">Projects</span>
+      </a>
+      <a class="flex flex-col items-center justify-center text-[#c8c6c5] transition-transform active:scale-90 tap-highlight-none" href="contact.html">
+        <span class="material-symbols-outlined" data-icon="mail">mail</span>
+        <span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">Contact</span>
+      </a>
+    </nav>
+
+    <footer class="w-full py-12 px-6 mt-20 bg-[#131313] border-t border-outline-variant/10">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex flex-col gap-2">
+          <span class="text-[#00F719] font-black font-['Space_Grotesk'] tracking-widest">KINETIC_LOGIC</span>
+          <span class="font-['Space_Grotesk'] text-xs uppercase text-[#c8c6c5]">© 2026 KINETIC_LOGIC // SYSTEM_ARCHITECT // ALL RIGHTS RESERVED..</span>
+        </div>
+        <div class="flex gap-8 font-['Space_Grotesk'] text-xs uppercase">
+          <a class="font-['Space_Grotesk'] text-xs uppercase text-[#c8c6c5] hover:text-white transition-all underline-offset-4 hover:underline" href="https://www.linkedin.com/in/abdoulaye-sow-58b98b35a">LinkedIn</a>
+          <a class="font-['Space_Grotesk'] text-xs uppercase text-[#c8c6c5] hover:text-white transition-all underline-offset-4 hover:underline" href="https://t.me/Abdallahso">Télégramme</a>
+          <a class="font-['Space_Grotesk'] text-xs uppercase text-[#c8c6c5] hover:text-white transition-all underline-offset-4 hover:underline" href="https://github.com/dashboard">Github</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
